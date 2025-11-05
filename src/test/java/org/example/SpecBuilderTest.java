@@ -51,7 +51,10 @@ public class SpecBuilderTest {
                 .body(p);
 
         Response response =res.when().post("/maps/api/place/add/json").
-                then().spec(resspec).extract().response();
+                then()
+                .spec(resspec)
+                .extract()
+                .response();
 
         String responseString=response.asString();
         System.out.println(responseString);
